@@ -52,13 +52,13 @@ export class UpdateProfilePage implements OnInit {
       this.form = this.formBuilder.group({
         
         firstName: new FormControl('', Validators.compose([
-          //...
+          
         ])),
         lastName: new FormControl('', Validators.compose([
-          //...
+          
         ])),
         phone: new FormControl('', Validators.compose([
-          //...
+         
         ]))
 
       });
@@ -70,7 +70,7 @@ export class UpdateProfilePage implements OnInit {
 
 
   
-  // ActionSheet Handler
+
   async openActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       buttons: [{
@@ -88,7 +88,6 @@ export class UpdateProfilePage implements OnInit {
         text: 'Cancel',
         role: 'cancel',
         handler: () => {
-          // ...
         }
       }]
     });
