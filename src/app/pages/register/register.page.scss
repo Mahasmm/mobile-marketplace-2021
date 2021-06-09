@@ -1,3 +1,4 @@
+
 ion-slides{
     height: 90vh;
 }
@@ -14,12 +15,12 @@ p{
 }
 .header_lbl{
     font-size: 1.5rem;
-    color: var(--ion-color-secondary) !important;
+    color: var(--ion-color-warning) !important;
 }
 
 .resend_btn{
     font-weight: 600;
-    color: var(--ion-color-secondary);
+    color: var(--ion-color-warning);
     margin-top: 20px;
 }
 ion-item{

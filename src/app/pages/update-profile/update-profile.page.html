@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen color="dark">
+<ion-content fullscreen color="light">
   
   <div class="ion-margin-vertical">
     <ion-avatar>
@@ -21,15 +21,15 @@
   </div>
   <form class="ion-margin-top" [formGroup]="form">
     <ion-list lines="full" class="ion-no-margin ion-no-padding">
-      <ion-item color="dark">
+      <ion-item color="light">
         <ion-label position="stacked">First Name</ion-label>
         <ion-input type="text" formControlName="firstName" [(ngModel)]="data.firstName"></ion-input>
       </ion-item>
-      <ion-item color="dark">
+      <ion-item color="light">
         <ion-label position="stacked" >Last Name</ion-label>
         <ion-input type="text" formControlName="lastName" [(ngModel)]="data.lastName"></ion-input>
       </ion-item>
-      <ion-item color="dark">
+      <ion-item color="light">
         <ion-label position="stacked">Phone</ion-label>
         <ion-input type="tel" formControlName="phone" [(ngModel)]="data.phone"></ion-input>
       </ion-item>

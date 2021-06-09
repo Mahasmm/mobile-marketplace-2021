@@ -1,14 +1,14 @@
 <ion-header>
   <ion-toolbar color="warning">
    <div style="float:left;margin-top:5%"> <ion-title >Home</ion-title></div>
-   <div style="float: right;" color="dark">
+   <div style="float: right;" color="light">
       <ion-avatar>
         <img [src]="data.image">
       </ion-avatar>
     </div>
   </ion-toolbar>
 
-  <ion-toolbar no-border color="dark">
+  <ion-toolbar no-border color="light">
    
     
     <div> <ion-searchbar style=" width: 50%;margin-top:2% ;" [(ngModel)]="searchText" placeholder="Search" animated>
@@ -16,11 +16,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="dark">
+<ion-content color="light">
 
   <ion-list *ngIf="listings">
-    <ion-item *ngFor="let listing of search()" color="dark">
-      <ion-card style="padding: 10px;">
+    <ion-item *ngFor="let listing of search()" color="light">
+      <ion-card style="padding: 10px;" color="dark">
         <ion-card-header>
          <div style="float: right;padding: 7%;"> <ion-card-subtitle style=" color: var(--ion-color-warning);"> {{listing.title}} </ion-card-subtitle></div>
           <div style="float: left;">
@@ -36,7 +36,7 @@
           <ion-card-subtitle>{{listing.description}}</ion-card-subtitle>
           <ion-card-subtitle><ion-icon name="location-outline"></ion-icon>{{listing.price}}</ion-card-subtitle>
           <ion-label>
-            <ion-card>
+            <ion-card color="dark">
               <div style="padding-left: 20%;float: left; width: 50%;"><h2>like </h2> <ion-icon  style="color:red; font-size:large; " name="heart-outline"></ion-icon></div>
               <div style="padding-left: 20%;float: right; width: 50%"><h2>share </h2> <ion-icon  style="color:rgb(65, 158, 127); font-size:large; " name="share-social-outline"></ion-icon></div> 
             </ion-card>

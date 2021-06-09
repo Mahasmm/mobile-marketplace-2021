@@ -5,38 +5,33 @@ import { AuthGuard } from './guard/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule), 
-    canActivate:[AuthGuard]
+    loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule),
+    canActivate: [AuthGuard]
 
   },
-  // {
-  //   path: 'home1',
-  //   loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  // },
-  // {
-  //   path: 'my-listings',
-  //   loadChildren: () => import('./my-listings/my-listings.module').then( m => m.MyListingsPageModule)
-  // },
-  // {
-  //   path: 'my-listings-add',
-  //   loadChildren: () => import('./my-listings-add/my-listings-add.module').then( m => m.MyListingsAddPageModule)
-  // },
-  // {
-  //   path: 'profile',
-  //   loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-  // },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  }
+  ,
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
+  
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
-  },  {
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'add-listing',
+    loadChildren: () => import('./pages/my-listings-add/my-listings-add.module').then( m => m.MyListingsAddPageModule)
+  },
+  {
     path: 'update-profile',
     loadChildren: () => import('./pages/update-profile/update-profile.module').then( m => m.UpdateProfilePageModule)
-  }
-
+  },
+ 
 ];
 @NgModule({
   imports: [

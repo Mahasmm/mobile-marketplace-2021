@@ -11,7 +11,7 @@
     .login-name{
         margin:10px;
         font-size: 1.7rem;
-        color:var(--ion-color-secondary)
+        color:var(--ion-color-warning)
     }
     .subTitle{
         margin:10px;
@@ -21,7 +21,7 @@
 }
 
 .btn_class{
-    color:black;
+    // color:black;
     height: 50px;
     margin-top:20px;
     --border-radius:5px; 
@@ -41,7 +41,7 @@ ion-list{
 .createAcc{
     text-align: center;
     .registerTag{
-        color:var(--ion-color-secondary);
+        color:var(--ion-color-warning);
         font-weight: bold;
     }
 }

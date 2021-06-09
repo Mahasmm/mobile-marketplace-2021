@@ -5,13 +5,21 @@
 export const environment = {
   production: false,
   
-  firebaseConfig:{
-    apiKey: "AIzaSyAnsSVLactwsAY3zLD9YYKvieT9TkgUdB8",
-    authDomain: "mobilemarketplace-266c5.firebaseapp.com",
-    projectId: "mobilemarketplace-266c5",
-    storageBucket: "mobilemarketplace-266c5.appspot.com",
-    messagingSenderId: "310374443092",
-    appId: "1:310374443092:web:4f391892f6557eed1c65c1"
+  // firebaseConfig:{
+  //   apiKey: "AIzaSyAnsSVLactwsAY3zLD9YYKvieT9TkgUdB8",
+  //   authDomain: "mobilemarketplace-266c5.firebaseapp.com",
+  //   projectId: "mobilemarketplace-266c5",
+  //   storageBucket: "mobilemarketplace-266c5.appspot.com",
+  //   messagingSenderId: "310374443092",
+  //   appId: "1:310374443092:web:4f391892f6557eed1c65c1"
+  // }
+  firebaseConfig : {
+    apiKey: "AIzaSyATuCtlZ3uIH41vIzVdIt1ib8xqHpDg53A",
+    authDomain: "uniapp-2156a.firebaseapp.com",
+    projectId: "uniapp-2156a",
+    storageBucket: "uniapp-2156a.appspot.com",
+    messagingSenderId: "608683933019",
+    appId: "1:608683933019:web:771437444dda609762ae7e"
   }
     }
 
