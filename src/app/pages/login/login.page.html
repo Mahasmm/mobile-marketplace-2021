@@ -1,36 +1,43 @@
 
+<ion-content class="ion-padding" color="dark" >
+  <div class="login-logo">
+    <!-- <ion-avatar style="margin-left: 40%;"> -->
+      <img src="assets/icon/appicon.png" > 
+      
+    <!-- </ion-avatar> -->
+    <p class="login-name"> Muvi </p>
+    <!-- <p class="subTitle"> Enter your login detail to access your account</p> -->
+  </div>
 
-<ion-content>
-<div class="login-logo">
-  <img src="assets/icon/favicon.png" class="logo_icon">
-  <p class="login-name">Mobile Market Place</p>
-  <p class="subTitle">Enter your login detail to access your account</p>
-</div>
-<form #loginForm="ngForm">
-  <ion-list lines="none">
-    <ion-item lines="none">
-      <ion-input [(ngModel)]="email" placeholder="Email" name="email" required>
+ 
+  <form #loginForm="ngForm" novalidate>
+    <ion-list lines="none">
+      <ion-item lines="none" color="dark">
+        <ion-input [(ngModel)]="login.email" placeholder="Email" name="email" #email="ngModel" spellcheck="false"
+          autocapitalize="off"  required>
+        </ion-input>
+      </ion-item>
+   
+      <ion-item lines="none" color="dark">
+        <ion-input [(ngModel)]="login.password" name="password" placeholder="Password" type="password"
+          #password="ngModel" required>
+        </ion-input>
+      </ion-item>
 
-      </ion-input>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-input [(ngModel)]="password" placeholder="Password" name="password"  type="password" required>  
+       </ion-list>
 
-      </ion-input>
-    </ion-item>
-  </ion-list>
+    <ion-row class="ion-no-margin ion-no-padding">
+      <ion-col class="ion-no-margin ion-no-padding">
+        <ion-button class="btn_class" color="warning"  (click)="onLogin(loginForm)" type="submit" expand="block">Log in
+        </ion-button>
+        <label class="error-message1">{{errorMessage}}</label>
 
-  <ion-row class="Ion-no-margin ion-no-padding">
-    <ion-col class="Ion-no-margin ion-no-padding">
-      <ion-button class="btn_class" (click)="onLogin(loginForm)" color="secondary" type="submit" expand="block">
-        Login 
-      </ion-button>
-      <label class="errorMessage">{{errorMessage}}</label>
-    </ion-col>
-  </ion-row>
-</form>
-<p class="createAcc" (click)="register()">Don't have an account?
-  <span class="registerTag">Sign up</span>
-</p>
+      </ion-col>
+    </ion-row>
+
+  </form>
+  <p class="createAcc" (click)="register()" >Don't have an account?
+    <span class="registerTag" >Sign up</span>
+  </p>
 
 </ion-content>

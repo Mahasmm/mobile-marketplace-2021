@@ -23,7 +23,7 @@
       
           <ion-row>
             <ion-col> 
-            <ion-button class="btn_class" [disabled]="!registration_form.valid" color="secondary"  type="submit" (click)="signUp(registration_form.value)" expand="block">Register</ion-button>
+            <ion-button class="btn_class" [disabled]="!registration_form.valid" color="warning"  type="submit" (click)="signUp(registration_form.value)" expand="block">Register</ion-button>
             </ion-col>
           </ion-row>
         </form>
@@ -35,7 +35,7 @@
       <div class="emailForm">
         <h2 class="ion-text-center header_lbl">Email Verification</h2>
         <p class="subtitle ion-text-center">We sent email verification to
-          {{email}}. Please verify to continue...
+          {{user.email}}. Please verify to continue...
         </p>
       </div>
     </ion-slide>

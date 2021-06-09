@@ -1,9 +1,34 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>my-listings</ion-title>
+  <ion-toolbar color="warning">
+   
+    <ion-title style=" font-family:Courier">Muvi</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content color="light">
+    
+      <div class="card_div2" *ngFor="let item of data">
+        <ion-card style="padding: 10px;" color="dark">
+          <ion-card-header>
+            <ion-card-subtitle style=" color: var(--ion-color-warning);"> {{item.title}} </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content >
+            <img [src]="item.photoUrl" width="300" height="300">
+            <ion-card-subtitle>{{item.description}}</ion-card-subtitle>
+            <ion-card-subtitle><ion-icon name="location-outline"></ion-icon>{{item.price}}</ion-card-subtitle>
+            <ion-label>
+              <ion-card color="dark">
+                <div style="padding-left: 20%;float: left; width: 50%;"><h2>like </h2> <ion-icon  style="color:red; font-size:large; " name="heart-outline"></ion-icon></div>
+                <div style="padding-left: 20%;float: right; width: 50%"><h2>share </h2> <ion-icon  style="color:rgb(65, 158, 127); font-size:large; " name="share-social-outline"></ion-icon></div> 
+              </ion-card>
+            </ion-label>
+          </ion-card-content>
+        </ion-card>
+      </div>
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="addNewListing()">
+    <ion-fab-button color="warning">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

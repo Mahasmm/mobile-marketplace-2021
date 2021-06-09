@@ -1,9 +1,42 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>update-profile</ion-title>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen color="light">
+  
+  <div class="ion-margin-vertical">
+    <ion-avatar>
+      <img [src]="data.image">
+      <ion-fab (click)="openActionSheet()">
+        <ion-fab-button color="secondary">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-avatar>
+  </div>
+  <form class="ion-margin-top" [formGroup]="form">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item color="light">
+        <ion-label position="stacked">First Name</ion-label>
+        <ion-input type="text" formControlName="firstName" [(ngModel)]="data.firstName"></ion-input>
+      </ion-item>
+      <ion-item color="light">
+        <ion-label position="stacked" >Last Name</ion-label>
+        <ion-input type="text" formControlName="lastName" [(ngModel)]="data.lastName"></ion-input>
+      </ion-item>
+      <ion-item color="light">
+        <ion-label position="stacked">Phone</ion-label>
+        <ion-input type="tel" formControlName="phone" [(ngModel)]="data.phone"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin" color="warning" (click)="update()">Update Profile</ion-button>
+    </div>
+  </form>
 
 </ion-content>

@@ -1,9 +1,66 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
+<ion-header translucent>
+  <ion-toolbar color="warning">
+   
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="light">
 
+    <ion-list style="margin: 5%;">
+      <p class="ion-padding-horizontal" *ngIf="user && !user?.firstName">Update your profile to display your information here.</p>
+      
+        <ion-item lines="full" *ngIf="user && user?.firstName"  color="light">
+          
+          <div style="margin-left: 10%;" color="light">
+            <ion-avatar>
+              <img [src]="data.image">
+            </ion-avatar>
+          </div>
+          <div style="margin-left:10px;"></div>
+          <ion-label>
+            <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+            <h3>{{ user.phone }}</h3>
+            <p>{{ user.email }}</p>
+          </ion-label>
+        </ion-item>
+   
+      
+    </ion-list>
+    <div style="margin-bottom: 15%;"></div>
+
+    
+      <ion-item color="light"  button (click)="showUpdateProfilePage()" lines="none">
+        <ion-icon name="key-outline"></ion-icon><div style="margin-left: 20px;"></div>
+        <ion-label><h3> Account</h3><h5>Privacy,Security,Change number</h5></ion-label>
+      </ion-item>
+      <div style="margin-bottom: 20px;" ></div>
+      <ion-item color="light" lines="none">
+        <ion-icon name="chatbox-ellipses-outline"></ion-icon><div style="margin-left: 20px;"></div>
+        <ion-label><h3> Chats</h3><h5>Theme, wallpapers, chat history</h5></ion-label>
+      </ion-item>
+      <div style="margin-bottom: 20px;" ></div>
+    <ion-item color="light" lines="none">
+      <ion-icon name="notifications-outline"></ion-icon><div style="margin-left: 20px;"></div>
+      <ion-label><h3> Notfications</h3><h5>Message, posts</h5></ion-label>
+    </ion-item>
+    <div style="margin-bottom: 20px;" ></div>
+    <ion-item color="light" lines="none">
+      <ion-icon name="cloud-upload-outline"></ion-icon><div style="margin-left: 20px;"></div>
+      <ion-label><h3> Storage and data</h3><h5>Network usage, auto-download</h5></ion-label>
+    </ion-item>
+    <div style="margin-bottom: 20px;" ></div>
+    <ion-item color="light" lines="none">
+      <ion-icon name="help-circle-outline"></ion-icon><div style="margin-left: 20px;"></div>
+      <ion-label><h3> Help</h3><h5>Help center, contact us</h5></ion-label>
+    </ion-item>
+    <div style="margin-bottom: 20px;" ></div>
+
+    <ion-list lines="full">
+      <ion-item button (click)="signOut()" detail="false" color="light">
+        <ion-label color="danger">Sign Out</ion-label>
+      </ion-item>
+    </ion-list>
+
+  
 </ion-content>
