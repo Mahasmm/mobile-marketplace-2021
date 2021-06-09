@@ -24,24 +24,16 @@ export class MyListingsAddPage implements OnInit {
   downloadUrl: string;
   uploading: boolean = false;
   
-    // Upload Task 
+    
     task: AngularFireUploadTask;
-  
-    // Progress in percentage
     percentage: Observable<number>;
-  
-    // Snapshot of uploading file
     snapshot: Observable<any>;
-  
-    // Uploaded File URL
     UploadedFileURL: Observable<string>;
   
-  
-    //File details  
+
     fileName:string;
     fileSize:number;
-  
-    //Status check 
+
     isUploading:boolean;
     isUploaded:boolean;
   
@@ -123,14 +115,10 @@ export class MyListingsAddPage implements OnInit {
 
 
     this.camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64 (DATA_URL):
       let base64Image = imageData;
       this.profilePhoto = base64Image;
       this.uploadFile(base64Image);
-      //console.log(this.photo)
     }, (err) => {
-      // Handle error
       console.log(err)
     });
 
@@ -148,23 +136,18 @@ export class MyListingsAddPage implements OnInit {
 
     this.fileName = 'ListItem';
    
-    // The storage path
+    
     const path = `images/listings/${new Date().getTime()}_${this.fileName}.jpg`;
 
-    //File reference
     const fileRef = this.storage.ref(path);
-
-    // The main task
     this.task = this.storage.upload(path, file);
     console.log('After Upload')
-    // Get file progress percentage
     this.percentage = this.task.percentageChanges();
 
    this.task.snapshotChanges().pipe(
       
       finalize(() => {
         console.log('upload')
-        // Get uploaded file storage path
         this.UploadedFileURL = fileRef.getDownloadURL();
         
         this.UploadedFileURL.subscribe(resp=>{
@@ -172,10 +155,8 @@ export class MyListingsAddPage implements OnInit {
           this.downloadUrl = resp; 
           this.isUploading = false;
           this.isUploaded = true;
-          // if (this.commonSvc.setProfilePicture(this.user['companyType'],this.user['companyId'], resp)){
             this.uploading = false;
             this.util.toast('Picture has been successfully uploaded.', 'success', 'bottom');
-          // }
               
       
         },error=>{
@@ -225,7 +206,6 @@ export class MyListingsAddPage implements OnInit {
         this.util.toast('Listing has been successfully added!', 'success', 'bottom');
       })
       .catch(err => {
-        //console.log(err);
         this.util.errorToast('Error in adding listing. Please try again!');
       })
     
