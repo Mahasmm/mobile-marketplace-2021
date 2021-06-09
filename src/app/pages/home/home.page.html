@@ -1,9 +1,50 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
+  <ion-toolbar color="warning">
+   <div style="float:left;margin-top:5%"> <ion-title >Home</ion-title></div>
+   <div style="float: right;" color="dark">
+      <ion-avatar>
+        <img [src]="data.image">
+      </ion-avatar>
+    </div>
+  </ion-toolbar>
+
+  <ion-toolbar no-border color="dark">
+   
+    
+    <div> <ion-searchbar style=" width: 50%;margin-top:2% ;" [(ngModel)]="searchText" placeholder="Search" animated>
+    </ion-searchbar></div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="dark">
+
+  <ion-list *ngIf="listings">
+    <ion-item *ngFor="let listing of search()" color="dark">
+      <ion-card style="padding: 10px;">
+        <ion-card-header>
+         <div style="float: right;padding: 7%;"> <ion-card-subtitle style=" color: var(--ion-color-warning);"> {{listing.title}} </ion-card-subtitle></div>
+          <div style="float: left;">
+            <div style="margin-left: 10%;padding: 10%;" color="dark">
+              <ion-avatar>
+                <img [src]="data.image">
+              </ion-avatar>
+            </div>
+          </div>
+        </ion-card-header>
+        <ion-card-content >
+          <img [src]="listing.photoUrl" width="300" height="300">
+          <ion-card-subtitle>{{listing.description}}</ion-card-subtitle>
+          <ion-card-subtitle><ion-icon name="location-outline"></ion-icon>{{listing.price}}</ion-card-subtitle>
+          <ion-label>
+            <ion-card>
+              <div style="padding-left: 20%;float: left; width: 50%;"><h2>like </h2> <ion-icon  style="color:red; font-size:large; " name="heart-outline"></ion-icon></div>
+              <div style="padding-left: 20%;float: right; width: 50%"><h2>share </h2> <ion-icon  style="color:rgb(65, 158, 127); font-size:large; " name="share-social-outline"></ion-icon></div> 
+            </ion-card>
+          </ion-label>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-item>
+  </ion-list>
 
 </ion-content>
